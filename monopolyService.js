@@ -30,12 +30,13 @@
 const pgp = require('pg-promise')();
 
 const db = pgp({
-  host: process.env.DB_SERVER,
+  host: 'mydemoserver-tyler.postgres.database.azure.com',
   port: process.env.DB_PORT,
   database: process.env.DB_DATABASE,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
 });
+
 
 // Configure the server and its routes.
 
