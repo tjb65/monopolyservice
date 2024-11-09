@@ -1,26 +1,25 @@
 {
-    "name": "monopolyservice-tyler",
+    "name": "monopolyservice",
     "version": "1.0.0",
     "description": "CS 262 Webservice",
     "main": "monopolyService.js",
-    "author": "kvlinden",
+    "author": "tjb65",
     "license": "ISC",
     "engines": {
-        "node": "18.x"
+      "node": "18.x"
     },
     "scripts": {
-        "start": "node monopolyService.js",
-        "start-direct": "node monopolyDirect.js",
-        "lint": "eslint ."
+      "start": "node monopolyService.js",
+      "start-direct": "node monopolyDirect.js",
+      "lint": "eslint ."
     },
     "dependencies": {
-        "dotenv": "^16.4.5",
-        "express": "^4.17.1",
-        "pg-promise": "^10.15.4"
+      "express": "^4.17.1",
+      "pg-promise": "^10.12.1"
     },
     "devDependencies": {
-        "eslint": "^8.53.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.29.0"
+      "eslint": "^8.53.0",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-plugin-import": "^2.29.0"
     }
 }

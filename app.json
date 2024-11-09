@@ -1,6 +1,5 @@
 {
-    "name": "Start on Heroku: monopolyService.js",
-    "description": "Data-based webservice for CS 262",
-    "repository": "https://github.com/tjb65/monopolyservice",
-    "image": "heroku/nodejs"
+  "name": "Start on Heroku: monopolyService.js",
+  "description": "Data-based webservice for CS 262",
+  "repository": "https://github.com/tjb65/monopolyservice",
 }
