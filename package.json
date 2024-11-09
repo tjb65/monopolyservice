@@ -6,20 +6,21 @@
     "author": "tjb65",
     "license": "ISC",
     "engines": {
-      "node": "18.x"
+        "node": "20.x"
     },
     "scripts": {
-      "start": "node monopolyService.js",
-      "start-direct": "node monopolyDirect.js",
-      "lint": "eslint ."
+        "start": "node monopolyService.js",
+        "start-direct": "node monopolyDirect.js",
+        "lint": "eslint ."
     },
     "dependencies": {
-      "express": "^4.17.1",
-      "pg-promise": "^10.12.1"
+        "express": "^4.21.1",
+        "pg-promise": "^10.15.4"
     },
     "devDependencies": {
-      "eslint": "^8.53.0",
-      "eslint-config-airbnb-base": "^15.0.0",
-      "eslint-plugin-import": "^2.29.0"
-    }
+        "eslint": "^8.53.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.29.0"
+    },
+    "keywords": []
 }
