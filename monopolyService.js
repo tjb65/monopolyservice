@@ -22,10 +22,11 @@ router.use(express.json());
 router.get('/', readHelloMessage);
 router.get('/players', readPlayers);
 router.get('/players/:id', readPlayer);
-router.get('/players_games', readPlayersAndGames);  // New join endpoint
+router.get('/players_games', readPlayersAndGames);
 router.put('/players/:id', updatePlayer);
 router.post('/players', createPlayer);
 router.delete('/players/:id', deletePlayer);
+router.get('/players_score', readPlayersAndScore)
 
 app.use(router);
 app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -41,6 +42,7 @@ function returnDataOr404(res, data) {
 function readHelloMessage(req, res) {
   res.send('Hello, CS 262 Monopoly service!');
 }
+
 
 function readPlayers(req, res, next) {
   db.many('SELECT * FROM Player')
@@ -98,6 +100,22 @@ function readPlayersAndGames(req, res, next) {
   FROM Player
   JOIN playergame ON Player.id = playergame.playerid
   JOIN Game ON playergame.gameid = Game.id ORDER BY playergame.score DESC`)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      next(err);
+    });
+}
+
+function readPlayersAndScore(req, res, next) {
+  db.any(`
+    SELECT Player.name, Player.email, Game.time, PlayerGame.score
+    FROM Player
+    JOIN PlayerGame ON Player.id = PlayerGame.playerID
+    JOIN Game ON PlayerGame.gameID = Game.id
+    ORDER BY Player.name, Game.time DESC
+  `)
     .then((data) => {
       res.send(data);
     })
