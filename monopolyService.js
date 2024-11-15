@@ -110,7 +110,7 @@ function readPlayersAndGames(req, res, next) {
 
 function readPlayersAndScore(req, res, next) {
   db.any(`
-    SELECT Player.name, PlayerGame.score
+    SELECT Player.name, PlayerGame.score, PlayerGame.id
     FROM Player
     JOIN PlayerGame ON Player.id = PlayerGame.playerID
     JOIN Game ON PlayerGame.gameID = Game.id
@@ -123,3 +123,5 @@ function readPlayersAndScore(req, res, next) {
       next(err);
     });
 }
+
+
