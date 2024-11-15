@@ -110,11 +110,11 @@ function readPlayersAndGames(req, res, next) {
 
 function readPlayersAndScore(req, res, next) {
   db.any(`
-    SELECT Player.name, Player.email, Game.time, PlayerGame.score
+    SELECT Player.name, PlayerGame.score
     FROM Player
     JOIN PlayerGame ON Player.id = PlayerGame.playerID
     JOIN Game ON PlayerGame.gameID = Game.id
-    ORDER BY Player.name, Game.time DESC
+    ORDER BY Player.name DESC
   `)
     .then((data) => {
       res.send(data);
